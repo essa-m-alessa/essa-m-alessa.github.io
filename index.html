@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سلسلة تربوية: الجزء الرابع عشر</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: #f3f4f6;
+        }
+        .card {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        .section-divider {
+            height: 2px;
+            background: linear-gradient(90deg, #3b82f6, #60a5fa, #3b82f6);
+        }
+        .message-box {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Header Section with Navigation -->
+    <header class="bg-white py-4 shadow-md">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <!-- Navigation Links -->
+            <nav class="flex items-center space-x-4 space-x-reverse">
+                <!-- Current Page Link -->
+                <a href="#" class="flex items-center space-x-2 space-x-reverse p-2 rounded-full bg-blue-100 text-blue-800 font-bold transition-colors duration-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+                    </svg>
+                    <span>الجزء 14</span>
+                </a>
+                <!-- Disabled Link to Part 26 -->
+                <a href="#" class="flex items-center space-x-2 space-x-reverse p-2 rounded-full text-gray-600 hover:bg-gray-100 transition-colors duration-200" onclick="showDisabledMessage(event)">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M2 10a2 2 0 012-2h6a2 2 0 110 4H4a2 2 0 01-2-2z" />
+                        <path d="M12 2a2 2 0 012-2h4a2 2 0 012 2v4a2 2 0 01-2 2h-4a2 2 0 01-2-2V2z" />
+                    </svg>
+                    <span>الجزء 26</span>
+                </a>
+            </nav>
+            <!-- Page Title -->
+            <div class="text-center flex-grow">
+                <h1 class="text-4xl font-extrabold text-gray-900 leading-tight">سلسلة اقتباسات من الكتب التربوية</h1>
+                <p class="mt-2 text-xl font-medium text-gray-600">الجزء الرابع عشر</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Message Box for Disabled Link -->
+    <div id="disabled-message" class="fixed hidden z-50 message-box bg-white p-6 rounded-lg shadow-xl border border-gray-200 text-center transition-all duration-300 ease-in-out opacity-0">
+        <h3 class="text-xl font-bold text-gray-800">هذه الصفحة غير متاحة حالياً.</h3>
+        <p class="mt-2 text-gray-600">سيتم تفعيل الرابط قريباً.</p>
+    </div>
+
+    <!-- Main Content Section -->
+    <main class="container mx-auto px-4 py-12">
+        <!-- Author Card -->
+        <section class="mb-16">
+            <div class="bg-white rounded-2xl p-8 card max-w-2xl mx-auto flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-10 md:space-x-reverse">
+                <div class="flex-shrink-0">
+                    <img src="https://placehold.co/150x150/e5e7eb/4b5563?text=AR" alt="صورة معد الصفحة" class="rounded-full w-32 h-32 object-cover border-4 border-gray-200">
+                </div>
+                <div class="text-center md:text-right">
+                    <h2 class="text-2xl font-bold text-gray-900">إعداد: عبدالرحمن بن إبراهيم الحمد</h2>
+                    <p class="mt-2 text-gray-600">ممارس للتدريب في مجال التعلم والتعليم</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Principles Section -->
+        <section class="mb-16">
+            <div class="bg-white rounded-2xl p-8 card">
+                <h2 class="text-3xl font-bold text-center mb-6 text-gray-900">مبادئ أساسية في التربية</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-center">
+                    <div class="p-6 bg-gray-50 rounded-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto text-blue-600 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                          <path d="M12 14l9-5-9-5-9 5 9 5zm0 0v-8" />
+                          <path d="M16.5 14.5l-4.5 2.5-4.5-2.5" />
+                          <path d="M7.5 12.5v4" />
+                          <path d="M16.5 12.5v4" />
+                          <path d="M12 21l9-5-9-5-9 5 9 5zm0 0v-8" />
+                        </svg>
+                        <p class="text-xl font-medium text-gray-700 leading-relaxed">تعليم الطلاب أن يختاروا السلوك الجيد.</p>
+                        <p class="text-sm text-gray-500 mt-2">يركز هذا المبدأ على تمكين الطالب من اتخاذ قرارات صحيحة بنفسه، مما يعزز الاستقلالية والمسؤولية الذاتية لديه.</p>
+                    </div>
+                    <div class="p-6 bg-gray-50 rounded-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto text-green-600 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                          <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <p class="text-xl font-medium text-gray-700 leading-relaxed">أن يتجنب الطلاب السلوك السيئ أو المخالف.</p>
+                        <p class="text-sm text-gray-500 mt-2">يعتبر هذا المبدأ مكملاً للمبدأ الأول، حيث يهدف إلى توجيه الطلاب نحو تجنب الأخطاء من خلال وضع حدود واضحة وتعزيز العواقب الإيجابية والسلبية.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Strategies Section -->
+        <section class="mb-16">
+            <div class="bg-white rounded-2xl p-8 card">
+                <h2 class="text-3xl font-bold text-center mb-8 text-gray-900">استراتيجيات تربوية</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Strategy Card 1 -->
+                    <div class="card bg-gray-50 rounded-xl p-6 flex flex-col items-center text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-red-500 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                          <path d="M8 12h8m-4 4V8m-4 4a4 4 0 118 0a4 4 0 01-8 0z" />
+                          <path d="M20 12c0 4.418-4.477 8-10 8S0 16.418 0 12s4.477-8 10-8 10 3.582 10 8z" />
+                        </svg>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">أنواع الاستراتيجيات</h3>
+                        <p class="text-sm text-gray-500 mb-4">هذه هي الأطر الأساسية التي يمكن للمعلمين استخدامها لإدارة سلوك الطلاب في بيئة التعلم:</p>
+                        <ul class="list-disc list-inside space-y-2 text-lg font-medium text-gray-700 leading-relaxed text-right w-full">
+                            <li>وقائية. <span class="block text-sm text-gray-500 font-normal">تهدف إلى منع حدوث المشكلات السلوكية من البداية.</span></li>
+                            <li>تدخلية. <span class="block text-sm text-gray-500 font-normal">تُستخدم لمعالجة المشكلات السلوكية فور حدوثها.</span></li>
+                            <li>داعمة. <span class="block text-sm text-gray-500 font-normal">تُعزز السلوكيات الإيجابية وتوفر الدعم المستمر للطلاب.</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Strategy Card 2 -->
+                    <div class="card bg-gray-50 rounded-xl p-6 flex flex-col items-center text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-purple-600 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                          <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 012-2h2a2 2 0 012 2M9 5a2 2 0 002 2h2a2 2 0 002-2" />
+                        </svg>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">تجنب التوقعات غير المعقولة</h3>
+                        <p class="text-sm text-gray-500 mb-4">يجب على المعلمين تجنب هذه السلوكيات لتعزيز بيئة تعليمية صحية:</p>
+                        <ul class="list-disc list-inside space-y-2 text-lg font-medium text-gray-700 leading-relaxed text-right w-full">
+                            <li>السعي وراء الكمال. <span class="block text-sm text-gray-500 font-normal">التركيز المفرط على الكمال يمكن أن يسبب إحباطًا لدى الطلاب والمعلمين.</span></li>
+                            <li>عقلية نجم المنافسة. <span class="block text-sm text-gray-500 font-normal">المبالغة في المنافسة قد تؤدي إلى القلق والإحباط لدى الطلاب الأقل تفوقاً.</span></li>
+                            <li>القلم الأحمر. <span class="block text-sm text-gray-500 font-normal">التركيز فقط على الأخطاء وتجاهل نقاط القوة يقلل من ثقة الطالب بنفسه.</span></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Strategy Card 3 -->
+                    <div class="card bg-gray-50 rounded-xl p-6 flex flex-col items-center text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-yellow-600 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                          <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">تعديل طرق التدريس</h3>
+                        <p class="text-sm text-gray-500 mb-4">تنويع طرق التدريس يلبي احتياجات مختلف الطلاب ويحسن تجربة التعلم:</p>
+                        <ul class="list-disc list-inside space-y-2 text-lg font-medium text-gray-700 leading-relaxed text-right w-full">
+                            <li>استعمال مواد تعلم ملموسة. <span class="block text-sm text-gray-500 font-normal">يساعد على فهم المفاهيم الصعبة من خلال التجربة العملية.</span></li>
+                            <li>استعمال تعليم قائم على الحاسوب. <span class="block text-sm text-gray-500 font-normal">يوفر تفاعلية ومرونة في التعلم تتناسب مع العصر الرقمي.</span></li>
+                            <li>تعليم خطوة خطوة. <span class="block text-sm text-gray-500 font-normal">يضمن أن كل طالب يتقن المهارة قبل الانتقال إلى المرحلة التالية.</span></li>
+                            <li>تعليم طبقا لأنواع الذكاءات المتعددة. <span class="block text-sm text-gray-500 font-normal">يلبي الاحتياجات التعليمية لمختلف القدرات والميول لدى الطلاب.</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Challenges & Solutions Section -->
+        <section class="mb-16">
+            <div class="bg-white rounded-2xl p-8 card">
+                <h2 class="text-3xl font-bold text-center mb-8 text-gray-900">تحديات وحلول</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Challenge Card 1 -->
+                    <div class="card bg-red-50 rounded-xl p-6 text-center">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">لعبة اللوم - ليس فيها فائزون</h3>
+                        <p class="text-lg font-medium text-gray-700 leading-relaxed">اللوم لا يفيد في أي موقف، يجب تجنبه والتركيز على الحلول.</p>
+                        <p class="text-sm text-gray-500 mt-2">عندما يقع خطأ ما، فإن إلقاء اللوم على شخص معين لا يحل المشكلة. بدلاً من ذلك، يجب على الجميع العمل معًا لإيجاد حلول بناءة وتجنب تكرار الخطأ في المستقبل.</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 mx-auto text-red-500 mt-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.854-1.258 2.854-2.816V5.626c0-1.558-1.314-2.816-2.854-2.816H6.062C4.522 2.81 3.208 4.068 3.208 5.626v12.338c0 1.558 1.314 2.816 2.854 2.816z" />
+                        </svg>
+                    </div>
+
+                    <!-- Challenge Card 2 -->
+                    <div class="card bg-green-50 rounded-xl p-6 text-center">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">التعامل مع سوء تصرف الطلاب</h3>
+                        <p class="text-sm text-gray-500 mb-4">تعتبر هذه الأسئلة من أهم التحديات التي يواجهها المعلم، ويجب عليه الإجابة عليها بفعالية لضمان استمرار السلوكيات الإيجابية:</p>
+                        <p class="text-lg font-medium text-gray-700 leading-relaxed text-right">
+                            ماذا أعمل عندما يسئ الطلاب التصرف؟ وماذا أعمل بعد أن أكون قد عالجت المخالفة لكي لا يكررها هذا الطالب؟
+                        </p>
+                        <p class="text-lg font-medium text-gray-700 leading-relaxed mt-4 text-right">
+                            ماذا أعمل بحيث يستمر الطلاب الذين اختاروا أن يتصرفوا بشكل مناسب أن يواصلوا اختياراتهم لهذا الخيار الجيد؟
+                        </p>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 mx-auto text-green-500 mt-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.142A9 9 0 0118 10a9 9 0 01-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Practical Strategies Section -->
+        <section>
+            <div class="bg-white rounded-2xl p-8 card">
+                <h2 class="text-3xl font-bold text-center mb-8 text-gray-900">استراتيجيات عملية</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Strategy 1 -->
+                    <div class="card bg-blue-50 rounded-xl p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">وفر التدريس الفردي</h3>
+                        <p class="text-sm text-gray-500 mb-4">التدريس الفردي يساعد الطلاب الذين يحتاجون إلى دعم إضافي لتحقيق النجاح:</p>
+                        <ul class="list-disc list-inside space-y-2 text-lg font-medium text-gray-700 leading-relaxed text-right w-full">
+                            <li>مساعدة إضافية من المعلمين. <span class="block text-sm text-gray-500 font-normal">يضمن حصول الطلاب على الاهتمام الشخصي المطلوب.</span></li>
+                            <li>برامج علاجية. <span class="block text-sm text-gray-500 font-normal">تصمم خصيصاً لمعالجة نقاط الضعف الأكاديمية.</span></li>
+                            <li>متطوعون. <span class="block text-sm text-gray-500 font-normal">يوفرون دعمًا إضافيًا ووجهات نظر مختلفة.</span></li>
+                            <li>تعليم الرفاق. <span class="block text-sm text-gray-500 font-normal">يعزز فهم الطلاب للمادة من خلال التعلم من أقرانهم.</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Strategy 2 -->
+                    <div class="card bg-blue-50 rounded-xl p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">شجع التحدث الإيجابي مع الذات</h3>
+                        <p class="text-sm text-gray-500 mb-4">بناء ثقة الطلاب بأنفسهم وتغيير نظرتهم من سلبية إلى إيجابية:</p>
+                        <ul class="list-disc list-inside space-y-2 text-lg font-medium text-gray-700 leading-relaxed text-right w-full">
+                            <li>علق لوحات صفية إيجابية. <span class="block text-sm text-gray-500 font-normal">تذكير بصري مستمر بقيمة الجهد والإنجاز.</span></li>
+                            <li>اطلب عبارتين مشجعتين لقاء كل واحدة محبطة. <span class="block text-sm text-gray-500 font-normal">يساعد على إعادة صياغة الأفكار السلبية إلى أفكار بناءة.</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-800 text-white py-6 mt-12">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2024 جميع الحقوق محفوظة لـ عبدالرحمن بن إبراهيم الحمد</p>
+        </div>
+    </footer>
+
+    <script>
+        function showDisabledMessage(event) {
+            event.preventDefault(); // منع الانتقال إلى الصفحة
+            const messageBox = document.getElementById('disabled-message');
+            messageBox.classList.remove('hidden');
+            messageBox.classList.add('opacity-100');
+            setTimeout(() => {
+                messageBox.classList.remove('opacity-100');
+                messageBox.classList.add('opacity-0');
+                setTimeout(() => {
+                    messageBox.classList.add('hidden');
+                }, 300); // 300ms to allow fade out animation
+            }, 3000); // 3 seconds before starting to fade out
+        }
+    </script>
+
+</body>
+</html>
