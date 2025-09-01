@@ -3,328 +3,1501 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>سلسلة تربوية: ملف واحد</title>
+    <title>وَصْل - منصة متكاملة لتأسيس وتطوير الصناديق العائلية</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap');
+        
         body {
-            font-family: 'Tajawal', sans-serif;
-            background-color: #f3f4f6;
+            font-family: 'Cairo', sans-serif;
         }
-        .card {
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #06b6d4 100%);
         }
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+        
+        .card-hover {
+            transition: all 0.3s ease;
         }
-        .section-divider {
-            height: 2px;
-            background: linear-gradient(90deg, #3b82f6, #60a5fa, #3b82f6);
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
         }
-        .prose-custom {
-            line-height: 1.8;
-            color: #374151;
+        
+        .fade-in {
+            animation: fadeIn 1s ease-in;
         }
-        .prose-custom p, .prose-custom li {
-            font-size: 1.125rem;
-            margin-bottom: 1rem;
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-        .prose-custom strong {
-            color: #1f2937;
+        
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: #3b82f6;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            bottom: -8px;
+            right: 0;
+            background: linear-gradient(90deg, #3b82f6, #06b6d4);
+            transition: width 0.3s ease;
+            border-radius: 2px;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .section-title {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, #3b82f6, #06b6d4);
+            bottom: -10px;
+            right: 50%;
+            transform: translateX(50%);
+            border-radius: 2px;
+        }
+        
+        .feature-icon {
+            background: linear-gradient(135deg, #3b82f6, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .step-number {
+            background: linear-gradient(135deg, #3b82f6, #06b6d4);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .cta-button {
+            background: linear-gradient(135deg, #3b82f6, #06b6d4);
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(59, 130, 246, 0.4);
         }
     </style>
 </head>
-<body class="bg-gray-100 text-gray-800">
-
-    <!-- Header Section with Navigation -->
-    <header class="bg-white py-4 shadow-md sticky top-0 z-50">
-        <div class="container mx-auto px-4 flex justify-between items-center">
-            <!-- Navigation Links -->
-            <nav class="flex items-center space-x-4 space-x-reverse">
-                <!-- Link to Part 14 -->
-                <a href="#part14" class="flex items-center space-x-2 space-x-reverse p-2 rounded-full text-gray-600 hover:bg-gray-100 transition-colors duration-200">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                        <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-reverse space-x-4">
+                    <div class="text-3xl font-bold">
+                        <span class="text-blue-600">وَصْل</span>
+                    </div>
+                    <div class="text-sm text-gray-600 hidden md:block">
+                        منصة متكاملة لتأسيس وتطوير الصناديق العائلية
+                    </div>
+                </div>
+                <div class="hidden md:flex space-x-reverse space-x-8">
+                    <a href="#home" class="nav-link text-gray-700 font-medium">الرئيسية</a>
+                    <a href="#about" class="nav-link text-gray-700 font-medium">عن الصناديق</a>
+                    <a href="#benefits" class="nav-link text-gray-700 font-medium">المزايا</a>
+                    <a href="#requirements" class="nav-link text-gray-700 font-medium">متطلبات التأسيس</a>
+                    <a href="#board" class="nav-link text-gray-700 font-medium">مجلس الأمناء</a>
+                    <a href="#financial" class="nav-link text-gray-700 font-medium">الشؤون المالية</a>
+                    <a href="#governance" class="nav-link text-gray-700 font-medium">الحوكمة والقوانين</a>
+                    <a href="#services" class="nav-link text-gray-700 font-medium">خدمات المنصة</a>
+                    <a href="#consultant" class="nav-link text-gray-700 font-medium">المستشار</a>
+                </div>
+                <button id="menuBtn" class="md:hidden text-gray-700 hover:text-blue-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
-                    <span>الجزء 14</span>
-                </a>
-                <!-- Link to Part 26 -->
-                <a href="#part26" class="flex items-center space-x-2 space-x-reverse p-2 rounded-full text-gray-600 hover:bg-gray-100 transition-colors duration-200">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                        <path d="M2 10a2 2 0 012-2h6a2 2 0 110 4H4a2 2 0 01-2-2z" />
-                        <path d="M12 2a2 2 0 012-2h4a2 2 0 012 2v4a2 2 0 01-2 2h-4a2 2 0 01-2-2V2z" />
-                    </svg>
-                    <span>الجزء 26</span>
-                </a>
-            </nav>
-            <!-- Page Title -->
-            <div class="text-center flex-grow">
-                <h1 class="text-4xl font-extrabold text-gray-900 leading-tight mb-2">سلسلة اقتباسات تربوية</h1>
-                <p class="text-lg text-gray-600">مقتطفات من الجزء الرابع عشر والسادس والعشرون</p>
+                </button>
             </div>
-        </div>
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="hidden md:hidden mt-4 pb-4 border-t border-gray-200 pt-4">
+                <a href="#home" class="block py-2 text-gray-700 hover:text-blue-600">الرئيسية</a>
+                <a href="#about" class="block py-2 text-gray-700 hover:text-blue-600">عن الصناديق</a>
+                <a href="#benefits" class="block py-2 text-gray-700 hover:text-blue-600">المزايا</a>
+                <a href="#requirements" class="block py-2 text-gray-700 hover:text-blue-600">متطلبات التأسيس</a>
+                <a href="#board" class="block py-2 text-gray-700 hover:text-blue-600">مجلس الأمناء</a>
+                <a href="#financial" class="block py-2 text-gray-700 hover:text-blue-600">الشؤون المالية</a>
+                <a href="#governance" class="block py-2 text-gray-700 hover:text-blue-600">الحوكمة والقوانين</a>
+                <a href="#services" class="block py-2 text-gray-700 hover:text-blue-600">خدمات المنصة</a>
+                <a href="#consultant" class="block py-2 text-gray-700 hover:text-blue-600">المستشار</a>
+            </div>
+        </nav>
     </header>
 
-    <!-- Main Content Section - Part 14 -->
-    <main id="part14" class="container mx-auto px-4 py-12">
-        <!-- Removed Part 14 Title -->
-        
-        <!-- Author Card -->
-        <section class="mb-16">
-            <div class="bg-white rounded-2xl p-8 card max-w-2xl mx-auto flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-10 md:space-x-reverse">
-                <div class="flex-shrink-0">
-                    <img src="https://placehold.co/150x150/e5e7eb/4b5563?text=AR" alt="صورة معد الصفحة" class="rounded-full w-32 h-32 object-cover border-4 border-gray-200">
-                </div>
-                <div class="text-center md:text-right">
-                    <h2 class="text-2xl font-bold text-gray-900">إعداد: عبدالرحمن بن إبراهيم الحمد</h2>
-                    <p class="mt-2 text-gray-600">ممارس للتدريب في مجال التعلم والتعليم</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Principles Section -->
-        <section class="mb-16">
-            <div class="bg-white rounded-2xl p-8 card">
-                <h2 class="text-3xl font-bold text-center mb-6 text-gray-900">مبادئ أساسية في التربية</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-center">
-                    <div class="p-6 bg-gray-50 rounded-lg">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto text-blue-600 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                          <path d="M12 14l9-5-9-5-9 5 9 5zm0 0v-8" />
-                          <path d="M16.5 14.5l-4.5 2.5-4.5-2.5" />
-                          <path d="M7.5 12.5v4" />
-                          <path d="M16.5 12.5v4" />
-                          <path d="M12 21l9-5-9-5-9 5 9 5zm0 0v-8" />
-                        </svg>
-                        <p class="text-xl font-medium text-gray-700 leading-relaxed">تعليم الطلاب أن يختاروا السلوك الجيد.</p>
-                        <p class="text-sm text-gray-500 mt-2">يركز هذا المبدأ على تمكين الطالب من اتخاذ قرارات صحيحة بنفسه، مما يعزز الاستقلالية والمسؤولية الذاتية لديه.</p>
-                    </div>
-                    <div class="p-6 bg-gray-50 rounded-lg">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto text-green-600 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                          <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                        <p class="text-xl font-medium text-gray-700 leading-relaxed">أن يتجنب الطلاب السلوك السيئ أو المخالف.</p>
-                        <p class="text-sm text-gray-500 mt-2">يعتبر هذا المبدأ مكملاً للمبدأ الأول، حيث يهدف إلى توجيه الطلاب نحو تجنب الأخطاء من خلال وضع حدود واضحة وتعزيز العواقب الإيجابية والسلبية.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Strategies Section -->
-        <section class="mb-16">
-            <div class="bg-white rounded-2xl p-8 card">
-                <h2 class="text-3xl font-bold text-center mb-8 text-gray-900">استراتيجيات تربوية</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Strategy Card 1 -->
-                    <div class="card bg-gray-50 rounded-xl p-6 flex flex-col items-center text-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-red-500 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                          <path d="M8 12h8m-4 4V8m-4 4a4 4 0 118 0a4 4 0 01-8 0z" />
-                          <path d="M20 12c0 4.418-4.477 8-10 8S0 16.418 0 12s4.477-8 10-8 10 3.582 10 8z" />
-                        </svg>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">أنواع الاستراتيجيات</h3>
-                        <p class="text-sm text-gray-500 mb-4">هذه هي الأطر الأساسية التي يمكن للمعلمين استخدامها لإدارة سلوك الطلاب في بيئة التعلم:</p>
-                        <ul class="list-disc list-inside space-y-2 text-lg font-medium text-gray-700 leading-relaxed text-right w-full">
-                            <li>وقائية. <span class="block text-sm text-gray-500 font-normal">تهدف إلى منع حدوث المشكلات السلوكية من البداية.</span></li>
-                            <li>تدخلية. <span class="block text-sm text-gray-500 font-normal">تُستخدم لمعالجة المشكلات السلوكية فور حدوثها.</span></li>
-                            <li>داعمة. <span class="block text-sm text-gray-500 font-normal">تُعزز السلوكيات الإيجابية وتوفر الدعم المستمر للطلاب.</span></li>
-                        </ul>
-                    </div>
-
-                    <!-- Strategy Card 2 -->
-                    <div class="card bg-gray-50 rounded-xl p-6 flex flex-col items-center text-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-purple-600 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                          <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 012-2h2a2 2 0 012 2M9 5a2 2 0 002 2h2a2 2 0 002-2" />
-                        </svg>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">تجنب التوقعات غير المعقولة</h3>
-                        <p class="text-sm text-gray-500 mb-4">يجب على المعلمين تجنب هذه السلوكيات لتعزيز بيئة تعليمية صحية:</p>
-                        <ul class="list-disc list-inside space-y-2 text-lg font-medium text-gray-700 leading-relaxed text-right w-full">
-                            <li>السعي وراء الكمال. <span class="block text-sm text-gray-500 font-normal">التركيز المفرط على الكمال يمكن أن يسبب إحباطًا لدى الطلاب والمعلمين.</span></li>
-                            <li>عقلية نجم المنافسة. <span class="block text-sm text-gray-500 font-normal">المبالغة في المنافسة قد تؤدي إلى القلق والإحباط لدى الطلاب الأقل تفوقاً.</span></li>
-                            <li>القلم الأحمر. <span class="block text-sm text-gray-500 font-normal">التركيز فقط على الأخطاء وتجاهل نقاط القوة يقلل من ثقة الطالب بنفسه.</span></li>
-                        </ul>
-                    </div>
-                    
-                    <!-- Strategy Card 3 -->
-                    <div class="card bg-gray-50 rounded-xl p-6 flex flex-col items-center text-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-yellow-600 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                          <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">تعديل طرق التدريس</h3>
-                        <p class="text-sm text-gray-500 mb-4">تنويع طرق التدريس يلبي احتياجات مختلف الطلاب ويحسن تجربة التعلم:</p>
-                        <ul class="list-disc list-inside space-y-2 text-lg font-medium text-gray-700 leading-relaxed text-right w-full">
-                            <li>استعمال مواد تعلم ملموسة. <span class="block text-sm text-gray-500 font-normal">يساعد على فهم المفاهيم الصعبة من خلال التجربة العملية.</span></li>
-                            <li>استعمال تعليم قائم على الحاسوب. <span class="block text-sm text-gray-500 font-normal">يوفر تفاعلية ومرونة في التعلم تتناسب مع العصر الرقمي.</span></li>
-                            <li>تعليم خطوة خطوة. <span class="block text-sm text-gray-500 font-normal">يضمن أن كل طالب يتقن المهارة قبل الانتقال إلى المرحلة التالية.</span></li>
-                            <li>تعليم طبقا لأنواع الذكاءات المتعددة. <span class="block text-sm text-gray-500 font-normal">يلبي الاحتياجات التعليمية لمختلف القدرات والميول لدى الطلاب.</span></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Challenges & Solutions Section -->
-        <section class="mb-16">
-            <div class="bg-white rounded-2xl p-8 card">
-                <h2 class="text-3xl font-bold text-center mb-8 text-gray-900">تحديات وحلول</h2>
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    <!-- Challenge Card 1 -->
-                    <div class="card bg-red-50 rounded-xl p-6 text-center">
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">لعبة اللوم - ليس فيها فائزون</h3>
-                        <p class="text-lg font-medium text-gray-700 leading-relaxed">اللوم لا يفيد في أي موقف، يجب تجنبه والتركيز على الحلول.</p>
-                        <p class="text-sm text-gray-500 mt-2">عندما يقع خطأ ما، فإن إلقاء اللوم على شخص معين لا يحل المشكلة. بدلاً من ذلك، يجب على الجميع العمل معًا لإيجاد حلول بناءة وتجنب تكرار الخطأ في المستقبل.</p>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 mx-auto text-red-500 mt-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.854-1.258 2.854-2.816V5.626c0-1.558-1.314-2.816-2.854-2.816H6.062C4.522 2.81 3.208 4.068 3.208 5.626v12.338c0 1.558 1.314 2.816 2.854 2.816z" />
-                        </svg>
-                    </div>
-
-                    <!-- Challenge Card 2 -->
-                    <div class="card bg-green-50 rounded-xl p-6 text-center">
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">التعامل مع سوء تصرف الطلاب</h3>
-                        <p class="text-sm text-gray-500 mb-4">تعتبر هذه الأسئلة من أهم التحديات التي يواجهها المعلم، ويجب عليه الإجابة عليها بفعالية لضمان استمرار السلوكيات الإيجابية:</p>
-                        <p class="text-lg font-medium text-gray-700 leading-relaxed text-right">
-                            ماذا أعمل عندما يسئ الطلاب التصرف؟ وماذا أعمل بعد أن أكون قد عالجت المخالفة لكي لا يكررها هذا الطالب؟
-                        </p>
-                        <p class="text-lg font-medium text-gray-700 leading-relaxed mt-4 text-right">
-                            ماذا أعمل بحيث يستمر الطلاب الذين اختاروا أن يتصرفوا بشكل مناسب أن يواصلوا اختياراتهم لهذا الخيار الجيد؟
-                        </p>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 mx-auto text-green-500 mt-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.142A9 9 0 0118 10a9 9 0 01-18 0 9 9 0 0118 0z" />
-                        </svg>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Practical Strategies Section -->
-        <section>
-            <div class="bg-white rounded-2xl p-8 card">
-                <h2 class="text-3xl font-bold text-center mb-8 text-gray-900">استراتيجيات عملية</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Strategy 1 -->
-                    <div class="card bg-blue-50 rounded-xl p-6">
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">وفر التدريس الفردي</h3>
-                        <p class="text-sm text-gray-500 mb-4">التدريس الفردي يساعد الطلاب الذين يحتاجون إلى دعم إضافي لتحقيق النجاح:</p>
-                        <ul class="list-disc list-inside space-y-2 text-lg font-medium text-gray-700 leading-relaxed text-right w-full">
-                            <li>مساعدة إضافية من المعلمين. <span class="block text-sm text-gray-500 font-normal">يضمن حصول الطلاب على الاهتمام الشخصي المطلوب.</span></li>
-                            <li>برامج علاجية. <span class="block text-sm text-gray-500 font-normal">تصمم خصيصاً لمعالجة نقاط الضعف الأكاديمية.</span></li>
-                            <li>متطوعون. <span class="block text-sm text-gray-500 font-normal">يوفرون دعمًا إضافيًا ووجهات نظر مختلفة.</span></li>
-                            <li>تعليم الرفاق. <span class="block text-sm text-gray-500 font-normal">يعزز فهم الطلاب للمادة من خلال التعلم من أقرانهم.</span></li>
-                        </ul>
-                    </div>
-
-                    <!-- Strategy 2 -->
-                    <div class="card bg-blue-50 rounded-xl p-6">
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">شجع التحدث الإيجابي مع الذات</h3>
-                        <p class="text-sm text-gray-500 mb-4">بناء ثقة الطلاب بأنفسهم وتغيير نظرتهم من سلبية إلى إيجابية:</p>
-                        <ul class="list-disc list-inside space-y-2 text-lg font-medium text-gray-700 leading-relaxed text-right w-full">
-                            <li>علق لوحات صفية إيجابية. <span class="block text-sm text-gray-500 font-normal">تذكير بصري مستمر بقيمة الجهد والإنجاز.</span></li>
-                            <li>اطلب عبارتين مشجعتين لقاء كل واحدة محبطة. <span class="block text-sm text-gray-500 font-normal">يساعد على إعادة صياغة الأفكار السلبية إلى أفكار بناءة.</span></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Separation line between sections -->
-    <div class="container mx-auto px-4 my-12">
-        <div class="section-divider"></div>
-    </div>
-
-    <!-- Main Content Section - Part 26 -->
-    <section id="part26" class="container mx-auto px-4 py-12">
-        <!-- Removed Part 26 Title -->
-
-        <!-- Introduction Section -->
-        <section class="mb-16">
-            <div class="bg-white rounded-2xl p-8 card">
-                <h2 class="text-3xl font-bold text-center mb-6 text-gray-900">إعداد: عبدالرحمن بن إبراهيم الحمد</h2>
-                <div class="section-divider my-8"></div>
-                <div class="prose-custom text-center md:text-right">
-                    <p class="text-2xl font-bold text-gray-900 mb-4">الرحلة تبدأ بالأفكار الثلاث الكبرى:</p>
-                    <ul class="list-none space-y-4">
-                        <li class="p-4 bg-blue-50 rounded-lg">
-                            <span class="text-blue-600 font-bold text-3xl mr-2">1.</span>
-                            <span class="text-xl">تركيز مستمر على تعلم الطلاب والتزام بتعلم مستمر أثناء العمل من قبل الراشدين في المؤسسة.</span>
-                        </li>
-                        <li class="p-4 bg-blue-50 rounded-lg">
-                            <span class="text-blue-600 font-bold text-3xl mr-2">2.</span>
-                            <span class="text-xl">بناء ثقافة تآزرية حيث يكون كل عضو جزءًا من فريق عالي الأداء يعمل أفراده معًا بشكل متعاضد لتحقيق هدف مشترك بينما يخضعون بعضهم بعضًا للمساءلة إزاء الالتزامات والنتائج.</span>
-                        </li>
-                        <li class="p-4 bg-blue-50 rounded-lg">
-                            <span class="text-blue-600 font-bold text-3xl mr-2">3.</span>
-                            <span class="text-xl">توجه نحو النتائج يسعى إلى أدلة مستمرة على تعلم الطلاب (بيانات) ثم يحول تلك البيانات إلى معلومات لدعم تعلم جميع الطلاب ولتركيز التعلم أثناء العمل للراشدين.</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- Four Fundamental Questions Section -->
-        <section class="mb-16">
-            <div class="bg-white rounded-2xl p-8 card">
-                <h2 class="text-3xl font-bold text-center mb-6 text-gray-900">الرحلة تبدأ بأربعة أسئلة أساسية</h2>
-                <p class="text-center text-xl text-gray-600 mb-8">تقود عمل المجتمع التعلمي المهني:</p>
-                <div class="prose-custom text-center md:text-right">
-                    <ul class="list-none space-y-6">
-                        <li class="p-4 bg-green-50 rounded-lg">
-                            <p class="text-lg font-bold text-gray-900">1. ما الذي نريد من طلابنا أن يتعلموه؟</p>
-                            <p class="text-base text-gray-700 mt-2">ما هي المعايير الأساسية التي تحدد المنهاج المضمون والقابل للتطبيق والذي يجب أن نقدمه لكل طالب؟</p>
-                        </li>
-                        <li class="p-4 bg-green-50 rounded-lg">
-                            <p class="text-lg font-bold text-gray-900">2. كيف نعرف أن التعلم حدث فعلاً؟</p>
-                            <p class="text-base text-gray-700 mt-2">ما هي أدوات واستراتيجيات التقويم التكويني المشترك التي سنستخدمها، وكيف سيبدو الطالب الناجح عندما ننتهي من تعليم المادة؟</p>
-                        </li>
-                        <li class="p-4 bg-green-50 rounded-lg">
-                            <p class="text-lg font-bold text-gray-900">3. كيف سنستجيب عندما لا يتعلم بعض الطلاب؟</p>
-                            <p class="text-base text-gray-700 mt-2">
-                                في هذه المرحلة يبرز دور التدخلات والدعم الإضافي للطلاب الذين يواجهون صعوبات.
-                            </p>
-                        </li>
-                        <li class="p-4 bg-green-50 rounded-lg">
-                            <p class="text-lg font-bold text-gray-900">4. كيف سنوسع التعلم للطلاب الذين أتقنوا المادة؟</p>
-                            <p class="text-base text-gray-700 mt-2">
-                                هنا يأتي دور إثراء المناهج والأنشطة الإضافية لتعزيز تعلم الطلاب المتميزين.
-                            </p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- Good Teaching Section -->
-        <section class="mb-16">
-            <div class="bg-white rounded-2xl p-8 card">
-                <h2 class="text-3xl font-bold text-center mb-6 text-gray-900">التعليم الجيد وأهميته</h2>
-                <div class="prose-custom text-center md:text-right">
-                    <p class="text-xl leading-relaxed">
-                        التعليم الجيد مهم بالفعل، ويذكر على أنه العامل الأهم في التأثير على تعلم الطلاب، وبالتالي، فإنه من المهم أن نرعى قدرة كل معلم لكي يكون قادرًا على تقديم تعليم عالي الجودة كل يوم. تدعم الأبحاث أهمية التعليم الجيد حتى إلى حد أنها تربط فاعلية النظام بأكمله بجودة تعليمه. وكما يلاحظ <span class="font-bold">Barber & Mourshed, 2009</span>، "لا يوجد محدد عملي لنتاجات الطلاب أهم من التعليم الجيد. وتأتي قيادة المدرسة في المرتبة الثانية بعد جودة التعليم من حيث تلك الأهمية." وفي الأساس، فقد وجد هذان الباحثان أن جودة النظام التربوي لا يمكن لها أن تتجاوز جودة معلميه. فالطريقة الوحيدة لتحسين النتاجات هي تحسين التعليم، ولتحسين التعليم، فإن علينا أن نبني القدرة لدى معلمينا.
+    <!-- Hero Section -->
+    <section id="home" class="gradient-bg text-white py-20 lg:py-32">
+        <div class="container mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="fade-in">
+                    <h1 class="text-5xl lg:text-7xl font-bold mb-6 leading-tight">
+                        <span class="block">وَصْل</span>
+                        <span class="block text-3xl lg:text-4xl font-normal opacity-90 mt-2">منصة متكاملة لتأسيس وتطوير الصناديق العائلية</span>
+                    </h1>
+                    <p class="text-xl lg:text-2xl mb-8 opacity-90 leading-relaxed">
+                        نساعدك في تأسيس صندوق عائلي متوافق مع رؤية السعودية 2030 لتعزيز الروابط الأسرية والتكافل الاجتماعي
                     </p>
+                    <button onclick="scrollToSection('consultant')" class="cta-button text-white px-10 py-4 rounded-full font-bold text-lg inline-flex items-center space-x-reverse space-x-3">
+                        <span>ابدأ الآن</span>
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="text-center lg:text-left">
+                    <div class="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20">
+                        <div class="text-8xl mb-4">🏛️</div>
+                        <h3 class="text-2xl font-bold mb-4">صناديق عائلية معتمدة</h3>
+                        <p class="text-lg opacity-90">وفقاً للقواعد التنظيمية الصادرة عن المركز الوطني لتنمية القطاع غير الربحي</p>
+                    </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Leadership Section -->
-        <section>
-            <div class="bg-white rounded-2xl p-8 card">
-                <h2 class="text-3xl font-bold text-center mb-6 text-gray-900">القيادة والتعلم</h2>
-                <div class="prose-custom text-center md:text-right">
-                    <p class="text-xl leading-relaxed">
-                        سواء كنت تقود فريقًا في مجتمع تعلمي مهني، أو مدرسة كمدير، أو منطقة تعليمية كمدير عام، اتخذ إجراء لبناء الهياكل والأنظمة التي تنمي القدرة. كن قائدًا للتعلم بأن تكون قائدًا يتعلم وشارك تعلمك مع الآخرين. استثمر في تشكيل ثقافتك على أساس مستمر يشمل بناء علاقات قوية تستند إلى الثقة. ثق بطلابك، ثم تصرف على أساس أنك تثق بهم في فعلاً. ضع توقعات واضحة وتأكد من أنك تبني القدرة.
-                    </p>
-                </div>
-            </div>
-        </section>
+        </div>
     </section>
 
-    <!-- Footer Section -->
-    <footer class="bg-gray-800 text-white py-6 mt-12">
-        <div class="container mx-auto px-4 text-center">
-            <p>&copy; 2024 جميع الحقوق محفوظة لـ عبدالرحمن بن إبراهيم الحمد</p>
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="section-title text-4xl lg:text-5xl font-bold text-gray-800 mb-6">الصناديق العائلية</h2>
+                <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                    كيانات أهلية منظمة تُعنى بتنمية الروابط الأسرية وتعزيز قيم التكافل الاجتماعي بين أفراد العائلة، والمساهمة في تحقيق مستهدفات رؤية السعودية 2030
+                </p>
+            </div>
+            
+            <!-- Objectives -->
+            <div class="mb-20">
+                <h3 class="text-3xl font-bold text-center text-gray-800 mb-12">أهداف الصندوق العائلي</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="card-hover bg-gradient-to-br from-blue-50 to-cyan-50 p-8 rounded-2xl border border-blue-100">
+                        <div class="feature-icon text-5xl mb-4">🤝</div>
+                        <h4 class="text-xl font-bold mb-3 text-gray-800">تعزيز صلة الرحم</h4>
+                        <p class="text-gray-600">بث روح التكافل والتآلف والرحمة بين أفراد العائلة</p>
+                    </div>
+                    <div class="card-hover bg-gradient-to-br from-blue-50 to-cyan-50 p-8 rounded-2xl border border-blue-100">
+                        <div class="feature-icon text-5xl mb-4">⚖️</div>
+                        <h4 class="text-xl font-bold mb-3 text-gray-800">إصلاح ذات البين</h4>
+                        <p class="text-gray-600">حل النزاعات وتقوية العلاقات الأسرية</p>
+                    </div>
+                    <div class="card-hover bg-gradient-to-br from-blue-50 to-cyan-50 p-8 rounded-2xl border border-blue-100">
+                        <div class="feature-icon text-5xl mb-4">💝</div>
+                        <h4 class="text-xl font-bold mb-3 text-gray-800">تنظيم الإحسان</h4>
+                        <p class="text-gray-600">المساهمة في تنظيم أوجه الإحسان بين أفراد العائلة</p>
+                    </div>
+                    <div class="card-hover bg-gradient-to-br from-blue-50 to-cyan-50 p-8 rounded-2xl border border-blue-100">
+                        <div class="feature-icon text-5xl mb-4">🤲</div>
+                        <h4 class="text-xl font-bold mb-3 text-gray-800">التعاون على البر</h4>
+                        <p class="text-gray-600">التعاون على البر والتقوى بين أفراد العائلة</p>
+                    </div>
+                    <div class="card-hover bg-gradient-to-br from-blue-50 to-cyan-50 p-8 rounded-2xl border border-blue-100">
+                        <div class="feature-icon text-5xl mb-4">📚</div>
+                        <h4 class="text-xl font-bold mb-3 text-gray-800">التعليم والتطوير</h4>
+                        <p class="text-gray-600">المساهمة في تعليم وتدريب وتطوير أفراد العائلة</p>
+                    </div>
+                    <div class="card-hover bg-gradient-to-br from-blue-50 to-cyan-50 p-8 rounded-2xl border border-blue-100">
+                        <div class="feature-icon text-5xl mb-4">🎯</div>
+                        <h4 class="text-xl font-bold mb-3 text-gray-800">رؤية 2030</h4>
+                        <p class="text-gray-600">المساهمة في تحقيق مستهدفات رؤية السعودية 2030</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="section-title text-4xl lg:text-5xl font-bold text-gray-800 mb-6">مزايا الصناديق العائلية</h2>
+                <p class="text-xl text-gray-600">فوائد متعددة تحققها الصناديق العائلية لأفراد العائلة</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="card-hover bg-white p-8 rounded-2xl shadow-lg text-center">
+                    <div class="feature-icon text-6xl mb-6">📈</div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-800">قابلية الاستثمار</h3>
+                    <p class="text-gray-600">تنمية أموال الأسرة بشكل آمن ومدروس</p>
+                </div>
+                <div class="card-hover bg-white p-8 rounded-2xl shadow-lg text-center">
+                    <div class="feature-icon text-6xl mb-6">⚖️</div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-800">صفة قانونية</h3>
+                    <p class="text-gray-600">ضمان الدعم والاستمرار بصفة قانونية معتمدة</p>
+                </div>
+                <div class="card-hover bg-white p-8 rounded-2xl shadow-lg text-center">
+                    <div class="feature-icon text-6xl mb-6">💰</div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-800">ضبط الحسابات</h3>
+                    <p class="text-gray-600">ضبط الحسابات المالية ومصروفات الأسرة</p>
+                </div>
+                <div class="card-hover bg-white p-8 rounded-2xl shadow-lg text-center">
+                    <div class="feature-icon text-6xl mb-6">🕌</div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-800">صرف الزكوات</h3>
+                    <p class="text-gray-600">صرف زكوات أفراد الأسرة على أولي القربى</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Requirements Section -->
+    <section id="requirements" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="section-title text-4xl lg:text-5xl font-bold text-gray-800 mb-6">متطلبات التأسيس</h2>
+                <p class="text-xl text-gray-600">الشروط والمتطلبات اللازمة لتأسيس صندوق عائلي ناجح</p>
+            </div>
+            
+            <!-- Founder Requirements -->
+            <div class="mb-16">
+                <h3 class="text-3xl font-bold text-center text-gray-800 mb-12">شروط طالب التأسيس</h3>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="card-hover bg-gradient-to-br from-green-50 to-emerald-50 p-8 rounded-2xl border border-green-100 text-center">
+                        <div class="step-number mx-auto mb-6">1</div>
+                        <h4 class="text-xl font-bold mb-3 text-gray-800">الجنسية السعودية</h4>
+                        <p class="text-gray-600">أن يكون سعودي الجنسية</p>
+                    </div>
+                    <div class="card-hover bg-gradient-to-br from-green-50 to-emerald-50 p-8 rounded-2xl border border-green-100 text-center">
+                        <div class="step-number mx-auto mb-6">2</div>
+                        <h4 class="text-xl font-bold mb-3 text-gray-800">كامل الأهلية</h4>
+                        <p class="text-gray-600">بلوغ السن القانوني والأهلية الكاملة</p>
+                    </div>
+                    <div class="card-hover bg-gradient-to-br from-green-50 to-emerald-50 p-8 rounded-2xl border border-green-100 text-center">
+                        <div class="step-number mx-auto mb-6">3</div>
+                        <h4 class="text-xl font-bold mb-3 text-gray-800">السمعة الحسنة</h4>
+                        <p class="text-gray-600">عدم صدور أحكام مخلة بالشرف أو الأمانة</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Fund Types -->
+            <div class="mb-16">
+                <h3 class="text-3xl font-bold text-center text-gray-800 mb-12">أنواع الصناديق</h3>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="card-hover bg-white p-8 rounded-2xl shadow-lg border-r-4 border-blue-500">
+                        <div class="text-4xl mb-4">👤</div>
+                        <h4 class="text-xl font-bold mb-3 text-gray-800">صندوق شخصي</h4>
+                        <p class="text-gray-600">يخدم أفراد عائلة طالب التأسيس</p>
+                    </div>
+                    <div class="card-hover bg-white p-8 rounded-2xl shadow-lg border-r-4 border-cyan-500">
+                        <div class="text-4xl mb-4">👨‍👩‍👧‍👦</div>
+                        <h4 class="text-xl font-bold mb-3 text-gray-800">صندوق باسم فرد</h4>
+                        <p class="text-gray-600">يجب أن يكون نصف أولاد من باسمه الصندوق من الدرجة الأولى من المتقدمين</p>
+                    </div>
+                    <div class="card-hover bg-white p-8 rounded-2xl shadow-lg border-r-4 border-teal-500">
+                        <div class="text-4xl mb-4">🏘️</div>
+                        <h4 class="text-xl font-bold mb-3 text-gray-800">صندوق عام</h4>
+                        <p class="text-gray-600">لخدمة عائلة واحدة أو عدة عوائل، بشرط وجود رابطة نسب أو مصاهرة</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Required Documents -->
+            <div class="bg-gray-50 p-8 rounded-2xl">
+                <h3 class="text-3xl font-bold text-center text-gray-800 mb-8">المستندات المطلوبة</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="flex items-start space-x-reverse space-x-4">
+                        <div class="text-2xl">📋</div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">طلب التأسيس</h4>
+                            <p class="text-gray-600">وفقاً للنموذج المعد من المركز</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-reverse space-x-4">
+                        <div class="text-2xl">📄</div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">بيان طالبي التأسيس</h4>
+                            <p class="text-gray-600">الاسم، رقم الهوية، المهنة، بيانات الاتصال</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-reverse space-x-4">
+                        <div class="text-2xl">🆔</div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">صورة الهوية الوطنية</h4>
+                            <p class="text-gray-600">لطالب/طالبي التأسيس</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-reverse space-x-4">
+                        <div class="text-2xl">👥</div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">أعضاء مجلس الأمناء</h4>
+                            <p class="text-gray-600">أسماء الأعضاء ورئيس المجلس ونائبه</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-reverse space-x-4">
+                        <div class="text-2xl">📜</div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">اللائحة الأساسية</h4>
+                            <p class="text-gray-600">وفق النموذج المعد من المركز</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-reverse space-x-4">
+                        <div class="text-2xl">🏦</div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">التعهد بفتح حساب بنكي</h4>
+                            <p class="text-gray-600">خلال سنة من تاريخ صدور الترخيص</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Board of Trustees Section -->
+    <section id="board" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="section-title text-4xl lg:text-5xl font-bold text-gray-800 mb-6">مجلس الأمناء</h2>
+                <p class="text-xl text-gray-600">الجهة المسؤولة عن إدارة شؤون الصندوق وتحقيق أهدافه</p>
+            </div>
+            
+            <!-- Board Overview -->
+            <div class="mb-16">
+                <div class="bg-white p-8 rounded-2xl shadow-lg max-w-4xl mx-auto text-center">
+                    <div class="text-6xl mb-6">🏛️</div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">دور مجلس الأمناء</h3>
+                    <p class="text-lg text-gray-600 leading-relaxed">
+                        يتولى مجلس الأمناء إدارة شؤون الصندوق، ويجب أن يكون عدد أعضائه لا يقل عن ثلاثة أعضاء، ويتم اختيارهم وتعيينهم وفق شروط محددة
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Board Requirements -->
+            <div class="mb-16">
+                <h3 class="text-3xl font-bold text-center text-gray-800 mb-12">شروط ومتطلبات الأعضاء</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="card-hover bg-white p-8 rounded-2xl shadow-lg text-center">
+                        <div class="feature-icon text-5xl mb-4">🇸🇦</div>
+                        <h4 class="text-xl font-bold mb-3 text-gray-800">الجنسية السعودية</h4>
+                        <p class="text-gray-600">أن يكون سعودياً وكامل الأهلية</p>
+                    </div>
+                    <div class="card-hover bg-white p-8 rounded-2xl shadow-lg text-center">
+                        <div class="feature-icon text-5xl mb-4">🚫</div>
+                        <h4 class="text-xl font-bold mb-3 text-gray-800">عدم العمل بالمركز</h4>
+                        <p class="text-gray-600">ألا يكون من العاملين في المركز الوطني</p>
+                    </div>
+                    <div class="card-hover bg-white p-8 rounded-2xl shadow-lg text-center">
+                        <div class="feature-icon text-5xl mb-4">⚖️</div>
+                        <h4 class="text-xl font-bold mb-3 text-gray-800">السمعة الحسنة</h4>
+                        <p class="text-gray-600">عدم صدور أحكام مخلة بالشرف والأمانة</p>
+                    </div>
+                    <div class="card-hover bg-white p-8 rounded-2xl shadow-lg text-center">
+                        <div class="feature-icon text-5xl mb-4">✅</div>
+                        <h4 class="text-xl font-bold mb-3 text-gray-800">موافقة المركز</h4>
+                        <p class="text-gray-600">يتم رفع الأسماء للمركز للموافقة عليها</p>
+                    </div>
+                    <div class="card-hover bg-white p-8 rounded-2xl shadow-lg text-center">
+                        <div class="feature-icon text-5xl mb-4">👥</div>
+                        <h4 class="text-xl font-bold mb-3 text-gray-800">اختيار القيادة</h4>
+                        <p class="text-gray-600">يختار الأعضاء رئيساً ونائباً في أول اجتماع</p>
+                    </div>
+                    <div class="card-hover bg-white p-8 rounded-2xl shadow-lg text-center">
+                        <div class="feature-icon text-5xl mb-4">📅</div>
+                        <h4 class="text-xl font-bold mb-3 text-gray-800">مدة الدورة</h4>
+                        <p class="text-gray-600">أربع سنوات مع اجتماعين سنوياً على الأقل</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Successful Board Qualities -->
+            <div class="mb-16">
+                <h3 class="text-3xl font-bold text-center text-gray-800 mb-12">صفات المجلس الناجح</h3>
+                <div class="grid md:grid-cols-5 gap-6">
+                    <div class="card-hover bg-gradient-to-br from-blue-50 to-cyan-50 p-6 rounded-2xl border border-blue-100 text-center">
+                        <div class="feature-icon text-4xl mb-4">⚡</div>
+                        <h4 class="text-lg font-bold mb-2 text-gray-800">فاعل</h4>
+                        <p class="text-sm text-gray-600">يتخذ قرارات فعالة ويشارك بفاعلية</p>
+                    </div>
+                    <div class="card-hover bg-gradient-to-br from-blue-50 to-cyan-50 p-6 rounded-2xl border border-blue-100 text-center">
+                        <div class="feature-icon text-4xl mb-4">👁️</div>
+                        <h4 class="text-lg font-bold mb-2 text-gray-800">واضح الرؤية</h4>
+                        <p class="text-sm text-gray-600">يمتلك رؤية واضحة ويترجمها لخطط</p>
+                    </div>
+                    <div class="card-hover bg-gradient-to-br from-blue-50 to-cyan-50 p-6 rounded-2xl border border-blue-100 text-center">
+                        <div class="feature-icon text-4xl mb-4">📋</div>
+                        <h4 class="text-lg font-bold mb-2 text-gray-800">موثق</h4>
+                        <p class="text-sm text-gray-600">يوثق القرارات لضمان الشفافية</p>
+                    </div>
+                    <div class="card-hover bg-gradient-to-br from-blue-50 to-cyan-50 p-6 rounded-2xl border border-blue-100 text-center">
+                        <div class="feature-icon text-4xl mb-4">🤝</div>
+                        <h4 class="text-lg font-bold mb-2 text-gray-800">مفوض</h4>
+                        <p class="text-sm text-gray-600">يفوض المهام بفعالية مع المتابعة</p>
+                    </div>
+                    <div class="card-hover bg-gradient-to-br from-blue-50 to-cyan-50 p-6 rounded-2xl border border-blue-100 text-center">
+                        <div class="feature-icon text-4xl mb-4">📊</div>
+                        <h4 class="text-lg font-bold mb-2 text-gray-800">متابع</h4>
+                        <p class="text-sm text-gray-600">يتابع الأداء لضمان تحقيق الأهداف</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Board Responsibilities -->
+            <div class="mb-16">
+                <div class="bg-white p-8 rounded-2xl shadow-lg mb-8">
+                    <h3 class="text-3xl font-bold text-center text-gray-800 mb-8">اختصاصات ومسؤوليات المجلس</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="space-y-4">
+                            <div class="flex items-start space-x-reverse space-x-4">
+                                <div class="text-2xl">📋</div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">السياسات والخطط</h4>
+                                    <p class="text-gray-600 text-sm">اعتماد السياسات العامة والخطط الاستراتيجية ومتابعة تنفيذها</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-reverse space-x-4">
+                                <div class="text-2xl">🏗️</div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">الهياكل التنظيمية</h4>
+                                    <p class="text-gray-600 text-sm">الإشراف على الأنشطة واعتماد الهياكل التنظيمية والوظيفية</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-reverse space-x-4">
+                                <div class="text-2xl">💰</div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">ضوابط الصرف</h4>
+                                    <p class="text-gray-600 text-sm">اعتماد ضوابط صرف المساعدات والبرامج التنموية</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-reverse space-x-4">
+                                <div class="text-2xl">⚖️</div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">الحوكمة</h4>
+                                    <p class="text-gray-600 text-sm">اعتماد أسس ومعايير حوكمة الصندوق والإشراف على تنفيذها</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-reverse space-x-4">
+                                <div class="text-2xl">📊</div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">التقارير المالية</h4>
+                                    <p class="text-gray-600 text-sm">تزويد المركز بالحساب الختامي والتقارير المالية المدققة</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-reverse space-x-4">
+                                <div class="text-2xl">👨‍💼</div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">التعيينات</h4>
+                                    <p class="text-gray-600 text-sm">تعيين المسؤول التنفيذي ومراجع الحسابات الخارجي</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex items-start space-x-reverse space-x-4">
+                                <div class="text-2xl">🏦</div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">الحسابات البنكية</h4>
+                                    <p class="text-gray-600 text-sm">فتح الحسابات البنكية والإشراف على التعاملات</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-reverse space-x-4">
+                                <div class="text-2xl">📈</div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">الاستثمار</h4>
+                                    <p class="text-gray-600 text-sm">إعداد قواعد استثمار الفائض من أموال الصندوق</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-reverse space-x-4">
+                                <div class="text-2xl">📝</div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">تعديل اللوائح</h4>
+                                    <p class="text-gray-600 text-sm">اعتماد التعديل على اللائحة الأساسية</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-reverse space-x-4">
+                                <div class="text-2xl">🤝</div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">التفويض</h4>
+                                    <p class="text-gray-600 text-sm">تفويض بعض الاختصاصات للجان أو المسؤول التنفيذي</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-reverse space-x-4">
+                                <div class="text-2xl">🛡️</div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">المسؤولية</h4>
+                                    <p class="text-gray-600 text-sm">المسؤولية عن أموال الصندوق وممتلكاته</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-reverse space-x-4">
+                                <div class="text-2xl">🎯</div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">اتخاذ القرارات</h4>
+                                    <p class="text-gray-600 text-sm">إصدار القرارات بالأغلبية البسيطة</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Individual Member Responsibilities -->
+                <div class="bg-gradient-to-br from-blue-50 to-cyan-50 p-8 rounded-2xl border border-blue-100 mb-8">
+                    <h3 class="text-2xl font-bold text-center text-gray-800 mb-8">مسؤوليات أعضاء المجلس الفردية</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="space-y-4">
+                            <div class="flex items-start space-x-reverse space-x-4">
+                                <div class="text-xl">💡</div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">تطوير الاستراتيجية</h4>
+                                    <p class="text-gray-600 text-sm">تقديم المقترحات لتطوير استراتيجية الصندوق</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-reverse space-x-4">
+                                <div class="text-xl">👀</div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">مراقبة الأداء</h4>
+                                    <p class="text-gray-600 text-sm">مراقبة أداء الجهاز التنفيذي ومراجعة التقارير</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-reverse space-x-4">
+                                <div class="text-xl">🔍</div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">التحقق المالي</h4>
+                                    <p class="text-gray-600 text-sm">التحقق من سلامة الأنظمة المالية وإدارة المخاطر</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-reverse space-x-4">
+                                <div class="text-xl">🗳️</div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">إبداء الرأي</h4>
+                                    <p class="text-gray-600 text-sm">في تعيين أو عزل المسؤول التنفيذي والوظائف القيادية</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex items-start space-x-reverse space-x-4">
+                                <div class="text-xl">📋</div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">الالتزام بالأنظمة</h4>
+                                    <p class="text-gray-600 text-sm">الالتزام التام بأحكام النظام واللوائح والقواعد الأساسية</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-reverse space-x-4">
+                                <div class="text-xl">⏰</div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">حضور الاجتماعات</h4>
+                                    <p class="text-gray-600 text-sm">حضور اجتماعات المجلس وتخصيص وقت كافٍ للمسؤوليات</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-reverse space-x-4">
+                                <div class="text-xl">🤐</div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">السرية</h4>
+                                    <p class="text-gray-600 text-sm">عدم إفشاء أي أسرار عرفها بسبب عضويته</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-reverse space-x-4">
+                                <div class="text-xl">🚪</div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">الاعتذار عند الحاجة</h4>
+                                    <p class="text-gray-600 text-sm">الاعتذار عن العضوية حال عدم تمكنه من الوفاء بمهامه</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Leadership Roles -->
+                <div class="grid md:grid-cols-2 gap-8 mb-8">
+                    <div class="bg-white p-8 rounded-2xl shadow-lg">
+                        <h3 class="text-xl font-bold text-center text-gray-800 mb-6">مهام رئيس المجلس ونائبه</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start space-x-reverse space-x-3">
+                                <div class="text-lg">📞</div>
+                                <p class="text-gray-600 text-sm">توجيه الدعوة لأعضاء المجلس لعقد الاجتماعات</p>
+                            </div>
+                            <div class="flex items-start space-x-reverse space-x-3">
+                                <div class="text-lg">📋</div>
+                                <p class="text-gray-600 text-sm">إقرار جداول أعمال الجلسات ومراقبة تنفيذها</p>
+                            </div>
+                            <div class="flex items-start space-x-reverse space-x-3">
+                                <div class="text-lg">✍️</div>
+                                <p class="text-gray-600 text-sm">التوقيع نيابة عن الصندوق على العقود والاتفاقات</p>
+                            </div>
+                            <div class="flex items-start space-x-reverse space-x-3">
+                                <div class="text-lg">💳</div>
+                                <p class="text-gray-600 text-sm">الاشتراك في التوقيع على الشيكات والأوراق المالية</p>
+                            </div>
+                            <div class="flex items-start space-x-reverse space-x-3">
+                                <div class="text-lg">⚡</div>
+                                <p class="text-gray-600 text-sm">البت في المسائل العاجلة التي لا تحتمل التأخير</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-2xl shadow-lg">
+                        <h3 class="text-xl font-bold text-center text-gray-800 mb-6">مهام أمين سر المجلس</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start space-x-reverse space-x-3">
+                                <div class="text-lg">📅</div>
+                                <p class="text-gray-600 text-sm">إعداد جدول الأعمال وإبلاغ الدعوة للأعضاء</p>
+                            </div>
+                            <div class="flex items-start space-x-reverse space-x-3">
+                                <div class="text-lg">📝</div>
+                                <p class="text-gray-600 text-sm">تولي أمانة سر الاجتماع وإعداد المحاضر</p>
+                            </div>
+                            <div class="flex items-start space-x-reverse space-x-3">
+                                <div class="text-lg">📚</div>
+                                <p class="text-gray-600 text-sm">إمساك السجلات المنصوص عليها في الأنظمة</p>
+                            </div>
+                            <div class="flex items-start space-x-reverse space-x-3">
+                                <div class="text-lg">📊</div>
+                                <p class="text-gray-600 text-sm">إعداد التقرير الإداري السنوي عن النشاطات</p>
+                            </div>
+                            <div class="flex items-start space-x-reverse space-x-3">
+                                <div class="text-lg">🔄</div>
+                                <p class="text-gray-600 text-sm">متابعة تنفيذ قرارات المجلس مع المسؤول التنفيذي</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Prohibitions and End of Membership -->
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-red-50 p-8 rounded-2xl border border-red-200">
+                        <h3 class="text-xl font-bold text-center text-red-800 mb-6">المحظورات على الأعضاء</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start space-x-reverse space-x-3">
+                                <div class="text-lg text-red-600">🚫</div>
+                                <p class="text-red-700 text-sm font-medium">التفرد بالقرار</p>
+                            </div>
+                            <div class="flex items-start space-x-reverse space-x-3">
+                                <div class="text-lg text-red-600">⚖️</div>
+                                <p class="text-red-700 text-sm font-medium">التصويت على قرار له فيه مصلحة مباشرة أو غير مباشرة</p>
+                            </div>
+                            <div class="flex items-start space-x-reverse space-x-3">
+                                <div class="text-lg text-red-600">💥</div>
+                                <p class="text-red-700 text-sm font-medium">إلحاق الضرر بالصندوق بأي شكل من الأشكال</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-orange-50 p-8 rounded-2xl border border-orange-200">
+                        <h3 class="text-xl font-bold text-center text-orange-800 mb-6">أسباب انتهاء العضوية</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-start space-x-reverse space-x-3">
+                                <div class="text-sm text-orange-600">📝</div>
+                                <p class="text-orange-700 text-sm">الاستقالة بطلب خطي</p>
+                            </div>
+                            <div class="flex items-start space-x-reverse space-x-3">
+                                <div class="text-sm text-orange-600">💔</div>
+                                <p class="text-orange-700 text-sm">الوفاة</p>
+                            </div>
+                            <div class="flex items-start space-x-reverse space-x-3">
+                                <div class="text-sm text-orange-600">❌</div>
+                                <p class="text-orange-700 text-sm">فقدان شرط من شروط العضوية</p>
+                            </div>
+                            <div class="flex items-start space-x-reverse space-x-3">
+                                <div class="text-sm text-orange-600">⚠️</div>
+                                <p class="text-orange-700 text-sm">إلحاق ضرر مادي أو أدبي بالصندوق</p>
+                            </div>
+                            <div class="flex items-start space-x-reverse space-x-3">
+                                <div class="text-sm text-orange-600">💰</div>
+                                <p class="text-orange-700 text-sm">استغلال العضوية لمنفعة شخصية</p>
+                            </div>
+                            <div class="flex items-start space-x-reverse space-x-3">
+                                <div class="text-sm text-orange-600">🚫</div>
+                                <p class="text-orange-700 text-sm">التغيب عن اجتماعين متتاليين أو أربع متفرقة</p>
+                            </div>
+                            <div class="flex items-start space-x-reverse space-x-3">
+                                <div class="text-sm text-orange-600">🏥</div>
+                                <p class="text-orange-700 text-sm">التعذر عن القيام بالدور لأسباب صحية</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Financial Affairs Section -->
+    <section id="financial" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="section-title text-4xl lg:text-5xl font-bold text-gray-800 mb-6">الشؤون المالية للصندوق</h2>
+                <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                    تتكون الموارد المالية للصندوق من مصادر متنوعة، وتخضع لإدارة صارمة لضمان الشفافية والامتثال للمتطلبات القانونية
+                </p>
+            </div>
+            
+            <!-- Financial Resources -->
+            <div class="mb-20">
+                <h3 class="text-3xl font-bold text-center text-gray-800 mb-12">موارد الصندوق المالية</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="card-hover bg-gradient-to-br from-green-50 to-emerald-50 p-8 rounded-2xl border border-green-100">
+                        <div class="feature-icon text-5xl mb-4">💰</div>
+                        <h4 class="text-xl font-bold mb-3 text-gray-800">تخصيصات المؤسسين</h4>
+                        <p class="text-gray-600">ما يخصصه المؤسسون أو أفراد العائلة من أموال وهبات وأوقاف ووصايا وزكوات وتبرعات</p>
+                    </div>
+                    <div class="card-hover bg-gradient-to-br from-green-50 to-emerald-50 p-8 rounded-2xl border border-green-100">
+                        <div class="feature-icon text-5xl mb-4">🔄</div>
+                        <h4 class="text-xl font-bold mb-3 text-gray-800">الاشتراكات الدورية</h4>
+                        <p class="text-gray-600">الاشتراكات الدورية لأفراد العائلة (إن وجدت)</p>
+                    </div>
+                    <div class="card-hover bg-gradient-to-br from-green-50 to-emerald-50 p-8 rounded-2xl border border-green-100">
+                        <div class="feature-icon text-5xl mb-4">📈</div>
+                        <h4 class="text-xl font-bold mb-3 text-gray-800">عائدات الاستثمارات</h4>
+                        <p class="text-gray-600">عائدات استثمارات الصندوق المختلفة</p>
+                    </div>
+                    <div class="card-hover bg-gradient-to-br from-green-50 to-emerald-50 p-8 rounded-2xl border border-green-100">
+                        <div class="feature-icon text-5xl mb-4">🎯</div>
+                        <h4 class="text-xl font-bold mb-3 text-gray-800">إيرادات الأنشطة</h4>
+                        <p class="text-gray-600">إيرادات الأنشطة ذات العائد المالي</p>
+                    </div>
+                    <div class="card-hover bg-gradient-to-br from-green-50 to-emerald-50 p-8 rounded-2xl border border-green-100">
+                        <div class="feature-icon text-5xl mb-4">🌐</div>
+                        <h4 class="text-xl font-bold mb-3 text-gray-800">الأموال الخارجية</h4>
+                        <p class="text-gray-600">الأموال من خارج أفراد العائلة بعد موافقة المركز</p>
+                    </div>
+                    <div class="card-hover bg-gradient-to-br from-green-50 to-emerald-50 p-8 rounded-2xl border border-green-100">
+                        <div class="feature-icon text-5xl mb-4">📋</div>
+                        <h4 class="text-xl font-bold mb-3 text-gray-800">موارد أخرى</h4>
+                        <p class="text-gray-600">أي موارد أخرى تحددها اللائحة الأساسية</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Financial Management Controls -->
+            <div class="mb-20">
+                <h3 class="text-3xl font-bold text-center text-gray-800 mb-12">ضوابط الإدارة المالية</h3>
+                <div class="bg-gray-50 p-8 rounded-2xl">
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="space-y-6">
+                            <div class="flex items-start space-x-reverse space-x-4">
+                                <div class="text-3xl">🛡️</div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 mb-2">مسؤولية مجلس الأمناء</h4>
+                                    <p class="text-gray-600">مجلس الأمناء مسؤول عن أموال الصندوق وممتلكاته، وعليه أداء مهامه بمسؤولية وحسن نية</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-reverse space-x-4">
+                                <div class="text-3xl">🏦</div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 mb-2">إيداع الأموال</h4>
+                                    <p class="text-gray-600">إيداع الأموال النقدية باسم الصندوق لدى البنوك المحلية، والتعاملات بتوقيع رئيس المجلس أو نائبه</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-reverse space-x-4">
+                                <div class="text-3xl">🤝</div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 mb-2">التفويض المصرفي</h4>
+                                    <p class="text-gray-600">يجوز تفويض التعامل مع الحسابات البنكية لاثنين من الأعضاء أو شاغلي الوظائف القيادية بعد موافقة المركز</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-reverse space-x-4">
+                                <div class="text-3xl">👨‍💼</div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 mb-2">مراجع الحسابات</h4>
+                                    <p class="text-gray-600">التعاقد مع مراجع حسابات خارجي مرخص له بمزاولة المهنة في المملكة</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space-y-6">
+                            <div class="flex items-start space-x-reverse space-x-4">
+                                <div class="text-3xl">📊</div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 mb-2">التقارير الدورية</h4>
+                                    <p class="text-gray-600">تزويد المركز ببيان الإيرادات والمصروفات والأنشطة خلال الربع الأول من السنة المالية</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-reverse space-x-4">
+                                <div class="text-3xl">📁</div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 mb-2">حفظ السجلات</h4>
+                                    <p class="text-gray-600">الاحتفاظ بالسجلات والمستندات المالية لمدة لا تقل عن عشر سنوات</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-reverse space-x-4">
+                                <div class="text-3xl">⚖️</div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 mb-2">الامتثال القانوني</h4>
+                                    <p class="text-gray-600">مراعاة أحكام الأنظمة المالية مثل مكافحة غسل الأموال ومكافحة جرائم الإرهاب وتمويله</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-reverse space-x-4">
+                                <div class="text-3xl">🚨</div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 mb-2">الإبلاغ عن المشبوه</h4>
+                                    <p class="text-gray-600">في حال الاشتباه بنشاط إجرامي، يجب إبلاغ الإدارة العامة للتحريات المالية فوراً</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Financial Statements -->
+            <div class="mb-20">
+                <h3 class="text-3xl font-bold text-center text-gray-800 mb-12">القوائم المالية</h3>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="card-hover bg-white p-8 rounded-2xl shadow-lg text-center">
+                        <div class="feature-icon text-6xl mb-6">📋</div>
+                        <h4 class="text-xl font-bold mb-4 text-gray-800">رفع القوائم المالية</h4>
+                        <p class="text-gray-600">رفع القوائم المالية المعتمدة عبر الموقع الإلكتروني للمركز الوطني</p>
+                    </div>
+                    <div class="card-hover bg-white p-8 rounded-2xl shadow-lg text-center">
+                        <div class="feature-icon text-6xl mb-6">📊</div>
+                        <h4 class="text-xl font-bold mb-4 text-gray-800">الحساب الختامي</h4>
+                        <p class="text-gray-600">تزويد المركز بالحساب الختامي والتقارير المدققة خلال أربعة أشهر من نهاية السنة المالية</p>
+                    </div>
+                    <div class="card-hover bg-white p-8 rounded-2xl shadow-lg text-center">
+                        <div class="feature-icon text-6xl mb-6">📈</div>
+                        <h4 class="text-xl font-bold mb-4 text-gray-800">الموازنة التقديرية</h4>
+                        <p class="text-gray-600">إعداد واعتماد الموازنة التقديرية للسنة المالية الجديدة وتزويد المركز بنسخة منها</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Support Challenges -->
+            <div class="bg-orange-50 p-8 rounded-2xl border border-orange-200">
+                <h3 class="text-3xl font-bold text-center text-orange-800 mb-8">تحديات ومعايير الدعم المالي</h3>
+                <p class="text-center text-orange-700 mb-8">التحديات التي تواجه الصناديق في تحديد الحاجة الفعلية للمستفيدين</p>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white p-6 rounded-xl border border-orange-200">
+                        <div class="text-3xl mb-4 text-orange-600">👁️</div>
+                        <h4 class="font-bold text-orange-800 mb-2">المشاهدات الواقعية</h4>
+                        <p class="text-orange-700 text-sm">غالباً تكون غير دقيقة في تحديد الحاجة الفعلية</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl border border-orange-200">
+                        <div class="text-3xl mb-4 text-orange-600">🎤</div>
+                        <h4 class="font-bold text-orange-800 mb-2">المحادثات الصوتية</h4>
+                        <p class="text-orange-700 text-sm">المجردة من الشواهد غير دقيقة لمعرفة الاحتياج</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl border border-orange-200">
+                        <div class="text-3xl mb-4 text-orange-600">🎭</div>
+                        <h4 class="font-bold text-orange-800 mb-2">التضليل المقصود</h4>
+                        <p class="text-orange-700 text-sm">بشواهد غير دالة على الحاجة الحقيقية</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl border border-orange-200">
+                        <div class="text-3xl mb-4 text-orange-600">❓</div>
+                        <h4 class="font-bold text-orange-800 mb-2">قلة المعرفة</h4>
+                        <p class="text-orange-700 text-sm">من القائمين بحجم الحاجة الحقيقية للمستفيدين</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl border border-orange-200">
+                        <div class="text-3xl mb-4 text-orange-600">📉</div>
+                        <h4 class="font-bold text-orange-800 mb-2">ضعف المعايير</h4>
+                        <p class="text-orange-700 text-sm">ضعف معايير الدراسات الحالية لتحديد حاجة المستفيدين</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl border border-orange-200">
+                        <div class="text-3xl mb-4 text-orange-600">💼</div>
+                        <h4 class="font-bold text-orange-800 mb-2">الحالة الاقتصادية</h4>
+                        <p class="text-orange-700 text-sm">عدم دقة تحديد الحاجة وفق الحالة الاقتصادية الحالية</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Governance and Legal Framework Section -->
+    <section id="governance" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="section-title text-4xl lg:text-5xl font-bold text-gray-800 mb-6">الحوكمة والإطار القانوني</h2>
+                <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                    نظام يضمن أن المنظمة تعمل بفاعلية وتدار بشكل نزيه، ويستند إلى مبادئ رئيسة تضمن الشفافية والمساءلة والكفاءة
+                </p>
+            </div>
+            
+            <!-- Governance Importance -->
+            <div class="mb-20">
+                <h3 class="text-3xl font-bold text-center text-gray-800 mb-12">أهمية ممارسة مبادئ الحوكمة</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="card-hover bg-white p-8 rounded-2xl shadow-lg text-center">
+                        <div class="feature-icon text-6xl mb-6">🎯</div>
+                        <h4 class="text-xl font-bold mb-4 text-gray-800">تحديد الأهداف</h4>
+                        <p class="text-gray-600">تساعد في تحديد الأهداف وسبل تحقيقها، والرقابة على الأداء</p>
+                    </div>
+                    <div class="card-hover bg-white p-8 rounded-2xl shadow-lg text-center">
+                        <div class="feature-icon text-6xl mb-6">📈</div>
+                        <h4 class="text-xl font-bold mb-4 text-gray-800">تحسين الأداء</h4>
+                        <p class="text-gray-600">تقويم وتحسين عمل الصناديق وتحقيق الفعالية في استخدام الموارد</p>
+                    </div>
+                    <div class="card-hover bg-white p-8 rounded-2xl shadow-lg text-center">
+                        <div class="feature-icon text-6xl mb-6">🛡️</div>
+                        <h4 class="text-xl font-bold mb-4 text-gray-800">إدارة المخاطر</h4>
+                        <p class="text-gray-600">تقلل من الأزمات المالية والإدارية وتضمن استدامة الصندوق</p>
+                    </div>
+                    <div class="card-hover bg-white p-8 rounded-2xl shadow-lg text-center">
+                        <div class="feature-icon text-6xl mb-6">🚫</div>
+                        <h4 class="text-xl font-bold mb-4 text-gray-800">مكافحة الفساد</h4>
+                        <p class="text-gray-600">الحد من الفساد الإداري والمالي عبر ممارسات الشفافية والمساءلة</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Governance Principles -->
+            <div class="mb-20">
+                <h3 class="text-3xl font-bold text-center text-gray-800 mb-12">مبادئ الحوكمة الأساسية</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="card-hover bg-gradient-to-br from-blue-50 to-cyan-50 p-8 rounded-2xl border border-blue-100">
+                        <div class="feature-icon text-5xl mb-4">⚖️</div>
+                        <h4 class="text-xl font-bold mb-3 text-gray-800">العدالة</h4>
+                        <p class="text-gray-600">عدم التمييز بين أصحاب المصلحة وتوفير فرص متساوية للجميع في صنع القرار والتعاملات</p>
+                    </div>
+                    <div class="card-hover bg-gradient-to-br from-blue-50 to-cyan-50 p-8 rounded-2xl border border-blue-100">
+                        <div class="feature-icon text-5xl mb-4">📜</div>
+                        <h4 class="text-xl font-bold mb-3 text-gray-800">سيادة القانون</h4>
+                        <p class="text-gray-600">إرساء إطار عمل قانوني يحمي حقوق أصحاب المصلحة ويضمن الالتزام باللوائح والأنظمة</p>
+                    </div>
+                    <div class="card-hover bg-gradient-to-br from-blue-50 to-cyan-50 p-8 rounded-2xl border border-blue-100">
+                        <div class="feature-icon text-5xl mb-4">🤝</div>
+                        <h4 class="text-xl font-bold mb-3 text-gray-800">المشاركة</h4>
+                        <p class="text-gray-600">إشراك كافة أصحاب المصلحة في عملية صنع القرار وتشجيع العمل التطوعي والمساهمات المجتمعية</p>
+                    </div>
+                    <div class="card-hover bg-gradient-to-br from-blue-50 to-cyan-50 p-8 rounded-2xl border border-blue-100">
+                        <div class="feature-icon text-5xl mb-4">📋</div>
+                        <h4 class="text-xl font-bold mb-3 text-gray-800">المسؤولية والمساءلة</h4>
+                        <p class="text-gray-600">توضيح الأدوار والمسؤوليات وتقديم التوضيحات اللازمة من خلال التقارير الرسمية</p>
+                    </div>
+                    <div class="card-hover bg-gradient-to-br from-blue-50 to-cyan-50 p-8 rounded-2xl border border-blue-100">
+                        <div class="feature-icon text-5xl mb-4">🔍</div>
+                        <h4 class="text-xl font-bold mb-3 text-gray-800">الشفافية</h4>
+                        <p class="text-gray-600">توفير المعلومات الموثوقة والآنية المتعلقة بالنشاطات والإجراءات والقرارات والسياسات</p>
+                    </div>
+                    <div class="card-hover bg-gradient-to-br from-blue-50 to-cyan-50 p-8 rounded-2xl border border-blue-100">
+                        <div class="feature-icon text-5xl mb-4">⚡</div>
+                        <h4 class="text-xl font-bold mb-3 text-gray-800">الكفاءة</h4>
+                        <p class="text-gray-600">تلبية حاجة المستفيدين وتحقيق أهداف الصندوق بشكل اقتصادي من خلال الاستخدام الأمثل للموارد</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Legal Framework -->
+            <div class="mb-16">
+                <h3 class="text-3xl font-bold text-center text-gray-800 mb-12">الإطار القانوني والتشريعات</h3>
+                
+                <!-- Basic Systems -->
+                <div class="mb-12">
+                    <h4 class="text-2xl font-bold text-center text-gray-800 mb-8">الأنظمة الأساسية</h4>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="card-hover bg-white p-8 rounded-2xl shadow-lg text-center">
+                            <div class="feature-icon text-5xl mb-4">🏛️</div>
+                            <h5 class="text-lg font-bold mb-3 text-gray-800">نظام الجمعيات والمؤسسات الأهلية</h5>
+                            <p class="text-gray-600 text-sm">الصادر بالمرسوم الملكي رقم (م/8) وتاريخ 1437/2/19 هـ</p>
+                        </div>
+                        <div class="card-hover bg-white p-8 rounded-2xl shadow-lg text-center">
+                            <div class="feature-icon text-5xl mb-4">📋</div>
+                            <h5 class="text-lg font-bold mb-3 text-gray-800">اللائحة التنفيذية</h5>
+                            <p class="text-gray-600 text-sm">الصادرة بقرار مجلس إدارة المركز الوطني رقم (ت/2023/2م) وتاريخ 2023/1/4م</p>
+                        </div>
+                        <div class="card-hover bg-white p-8 rounded-2xl shadow-lg text-center">
+                            <div class="feature-icon text-5xl mb-4">👨‍👩‍👧‍👦</div>
+                            <h5 class="text-lg font-bold mb-3 text-gray-800">القواعد التنظيمية للصناديق العائلية</h5>
+                            <p class="text-gray-600 text-sm">الصادرة بقرار مجلس الإدارة رقم (ت/2023/2م) وتاريخ 2023/1/4م</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Related Systems -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <h4 class="text-2xl font-bold text-center text-gray-800 mb-8">أنظمة ذات علاقة (مالية وإدارية)</h4>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="space-y-6">
+                            <div class="flex items-start space-x-reverse space-x-4">
+                                <div class="text-3xl">🚫</div>
+                                <div>
+                                    <h5 class="font-bold text-gray-800 mb-2">نظام مكافحة غسل الأموال</h5>
+                                    <p class="text-gray-600 text-sm">الصادر بالمرسوم الملكي رقم (م/20) وتاريخ 1435/2/13 هـ</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-reverse space-x-4">
+                                <div class="text-3xl">🛡️</div>
+                                <div>
+                                    <h5 class="font-bold text-gray-800 mb-2">نظام مكافحة جرائم الإرهاب وتمويله</h5>
+                                    <p class="text-gray-600 text-sm">الصادر بالمرسوم الملكي رقم (63) وتاريخ 1439/5/2 هـ</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space-y-6">
+                            <div class="flex items-start space-x-reverse space-x-4">
+                                <div class="text-3xl">⚖️</div>
+                                <div>
+                                    <h5 class="font-bold text-gray-800 mb-2">قواعد حوكمة الجمعيات والمؤسسات الأهلية</h5>
+                                    <p class="text-gray-600 text-sm">مشروع قواعد الحوكمة المعتمدة</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-reverse space-x-4">
+                                <div class="text-3xl">📄</div>
+                                <div>
+                                    <h5 class="font-bold text-gray-800 mb-2">اللائحة الأساسية للصندوق العائلي</h5>
+                                    <p class="text-gray-600 text-sm">النموذج الاسترشادي المعتمد</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Platform Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="section-title text-4xl lg:text-5xl font-bold text-gray-800 mb-6">خدمات المنصة</h2>
+                <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                    مجموعة شاملة من الأدوات والخدمات لدعم الصناديق العائلية في جميع مراحلها، مستندة إلى أفضل الممارسات والأطر التنظيمية
+                </p>
+            </div>
+            
+            <!-- Main Services -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+                <div class="card-hover bg-gradient-to-br from-blue-50 to-cyan-50 p-8 rounded-2xl border border-blue-100">
+                    <div class="feature-icon text-6xl mb-6">📋</div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-800">نماذج ولوائح استرشادية</h3>
+                    <p class="text-gray-600 mb-6">قوالب جاهزة للوائح الأساسية ونماذج طلبات التأسيس ومحاضر الاجتماعات، متوافقة مع متطلبات المركز الوطني</p>
+                    <ul class="text-sm text-gray-600 space-y-2">
+                        <li>• نموذج مقترح لجدول أعمال اجتماع المجلس</li>
+                        <li>• نموذج مقترح لمحضر اجتماع مجلس الأمناء</li>
+                        <li>• قوالب اللوائح الأساسية</li>
+                    </ul>
+                </div>
+                
+                <div class="card-hover bg-gradient-to-br from-green-50 to-emerald-50 p-8 rounded-2xl border border-green-100">
+                    <div class="feature-icon text-6xl mb-6">📖</div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-800">دليل إجرائي وخطوات بدء العمل</h3>
+                    <p class="text-gray-600 mb-6">إرشادات تفصيلية وخطوات عملية لكل مرحلة من مراحل تأسيس وإدارة الصندوق</p>
+                    <ul class="text-sm text-gray-600 space-y-2">
+                        <li>• بناء الهوية البصرية</li>
+                        <li>• التسجيل في العنوان الوطني</li>
+                        <li>• استخراج رقم 700</li>
+                        <li>• إنشاء حساب التأمينات الاجتماعية</li>
+                        <li>• فتح الحسابات البنكية</li>
+                    </ul>
+                </div>
+                
+                <div class="card-hover bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-2xl border border-purple-100">
+                    <div class="feature-icon text-6xl mb-6">💻</div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-800">أدوات رقمية للإدارة المالية</h3>
+                    <div class="bg-gradient-to-r from-purple-500 to-pink-500 text-white p-3 rounded-lg mb-4 text-sm font-bold text-center">
+                        🎉 بشرى: منصة مالية متخصصة قريباً بإذن الله
+                    </div>
+                    <p class="text-gray-600 mb-4">لمساعدتك في تتبع المساهمات والمصروفات وإعداد الميزانيات والتقارير المالية بدقة وشفافية</p>
+                    <ul class="text-sm text-gray-600 space-y-2">
+                        <li>• تقارير اللجان والإدارة التنفيذية</li>
+                        <li>• قياس مقدار المساعدات المالية</li>
+                        <li>• تتبع شامل للمستفيدين</li>
+                    </ul>
+                </div>
+                
+                <div class="card-hover bg-gradient-to-br from-orange-50 to-red-50 p-8 rounded-2xl border border-orange-100">
+                    <div class="feature-icon text-6xl mb-6">🎓</div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-800">خدمات تدريبية وتأهيلية</h3>
+                    <p class="text-gray-600 mb-6">دورات وورش عمل لأفراد العائلة ومجلس الأمناء لتعزيز مهاراتهم الإدارية والقانونية والمالية</p>
+                    <ul class="text-sm text-gray-600 space-y-2">
+                        <li>• فهم قواعد الحوكمة</li>
+                        <li>• الكفايات التربوية</li>
+                        <li>• إدارة اللقاءات الأسرية</li>
+                        <li>• تصميم الألعاب التربوية للأطفال</li>
+                    </ul>
+                </div>
+                
+                <div class="card-hover bg-gradient-to-br from-teal-50 to-cyan-50 p-8 rounded-2xl border border-teal-100">
+                    <div class="feature-icon text-6xl mb-6">⚖️</div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-800">نصائح واستشارات قانونية</h3>
+                    <p class="text-gray-600 mb-6">توجيهات قانونية متخصصة لضمان التزام الصندوق بجميع الأنظمة واللوائح الرسمية</p>
+                    <ul class="text-sm text-gray-600 space-y-2">
+                        <li>• نظام مكافحة غسل الأموال</li>
+                        <li>• مكافحة تمويل الإرهاب</li>
+                        <li>• حالات حل أو دمج الصندوق</li>
+                        <li>• الامتثال التنظيمي</li>
+                    </ul>
+                </div>
+                
+                <div class="card-hover bg-gradient-to-br from-indigo-50 to-blue-50 p-8 rounded-2xl border border-indigo-100">
+                    <div class="feature-icon text-6xl mb-6">🤝</div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-800">طلب الاستشارات</h3>
+                    <p class="text-gray-600 mb-6">خدمات استشارية متخصصة لمساعدة الصناديق العائلية في مختلف الجوانب القانونية والمالية والإدارية والتطويرية</p>
+                    <div class="space-y-3">
+                        <div class="text-sm text-gray-600">• الجوانب القانونية والمالية</div>
+                        <div class="text-sm text-gray-600">• الإدارة والتطوير</div>
+                        <div class="text-sm text-gray-600">• ضمان الامتثال والنمو المستدام</div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Consultant & Consultation Section -->
+    <section id="consultant" class="py-20 gradient-bg text-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6">المستشار والاستشارات</h2>
+                <p class="text-xl opacity-90">خبرة متخصصة في الحوكمة وتطوير المنظمات مع إمكانية التواصل المباشر</p>
+            </div>
+            
+            <div class="max-w-6xl mx-auto">
+                <!-- Consultant Profile -->
+                <div class="bg-white/10 backdrop-blur-sm rounded-3xl p-12 border border-white/20 mb-12">
+                    <div class="grid lg:grid-cols-2 gap-12 items-center">
+                        <div class="text-center lg:text-right">
+                            <div class="w-40 h-40 bg-white/20 rounded-full mx-auto lg:mx-0 mb-8 flex items-center justify-center">
+                                <div class="text-8xl">👨‍💼</div>
+                            </div>
+                            <h3 class="text-4xl font-bold mb-4">عيسى بن محمد العيسى</h3>
+                            <p class="text-2xl mb-6 opacity-90">مستشار الحوكمة وتطوير المنظمات</p>
+                            <div class="bg-white/10 p-6 rounded-2xl mb-6">
+                                <div class="text-3xl font-bold mb-2">📞 0504259325</div>
+                                <p class="opacity-80">متاح للاستشارات المباشرة</p>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-6">
+                            <div class="bg-white/10 p-6 rounded-2xl">
+                                <h4 class="text-xl font-bold mb-4 flex items-center">
+                                    <span class="text-3xl ml-3">🎯</span>
+                                    الخبرات والتخصصات
+                                </h4>
+                                <ul class="space-y-3 text-lg opacity-90">
+                                    <li>• خبرة واسعة في تأسيس وتطوير الصناديق العائلية</li>
+                                    <li>• التخصص في الحوكمة وتطوير المنظمات غير الربحية</li>
+                                    <li>• العمل وفقاً للمعايير والقواعد التنظيمية المعتمدة</li>
+                                    <li>• متابعة شاملة من التأسيس حتى التشغيل الكامل</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="grid md:grid-cols-3 gap-4">
+                                <div class="bg-white/10 p-4 rounded-xl text-center">
+                                    <div class="text-2xl mb-2">📋</div>
+                                    <h5 class="font-bold mb-1">استشارات قانونية</h5>
+                                    <p class="text-sm opacity-80">وإدارية متخصصة</p>
+                                </div>
+                                <div class="bg-white/10 p-4 rounded-xl text-center">
+                                    <div class="text-2xl mb-2">💼</div>
+                                    <h5 class="font-bold mb-1">إعداد الوثائق</h5>
+                                    <p class="text-sm opacity-80">والمستندات المطلوبة</p>
+                                </div>
+                                <div class="bg-white/10 p-4 rounded-xl text-center">
+                                    <div class="text-2xl mb-2">🔄</div>
+                                    <h5 class="font-bold mb-1">متابعة التراخيص</h5>
+                                    <p class="text-sm opacity-80">والإجراءات الرسمية</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Consultation Options -->
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- WhatsApp Consultation -->
+                    <div class="bg-gradient-to-br from-green-500/20 to-green-600/20 backdrop-blur-sm rounded-2xl p-8 border border-green-400/30">
+                        <div class="text-center mb-6">
+                            <div class="text-6xl mb-4">📱</div>
+                            <h3 class="text-2xl font-bold mb-3">استشارة فورية عبر واتساب</h3>
+                            <p class="opacity-90 mb-6">تواصل مباشر للحصول على استشارة سريعة ومتخصصة</p>
+                        </div>
+                        
+                        <div class="bg-white/10 p-6 rounded-xl mb-6">
+                            <h4 class="font-bold mb-3">ما ستحصل عليه:</h4>
+                            <ul class="space-y-2 text-sm opacity-90">
+                                <li>• استشارة مجانية أولية (15 دقيقة)</li>
+                                <li>• تقييم سريع لحالتك</li>
+                                <li>• توجيهات فورية للخطوات التالية</li>
+                                <li>• إجابات على استفساراتك العاجلة</li>
+                            </ul>
+                        </div>
+                        
+                        <a href="https://wa.me/966504259325?text=السلام عليكم، أرغب في الحصول على استشارة حول تأسيس صندوق عائلي من خلال منصة وَصْل" 
+                           target="_blank" 
+                           class="w-full inline-flex items-center justify-center space-x-reverse space-x-3 bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-xl font-bold text-lg transition duration-300 transform hover:scale-105">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+                            </svg>
+                            <span>تواصل عبر واتساب</span>
+                        </a>
+                    </div>
+                    
+                    <!-- Comprehensive Consultation -->
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+                        <div class="text-center mb-6">
+                            <div class="text-6xl mb-4">🚀</div>
+                            <h3 class="text-2xl font-bold mb-3">استشارة شاملة ومتابعة كاملة</h3>
+                            <p class="opacity-90 mb-6">خدمة متكاملة من التأسيس حتى التشغيل الكامل</p>
+                        </div>
+                        
+                        <div class="bg-white/10 p-6 rounded-xl mb-6">
+                            <h4 class="font-bold mb-3">الخدمات الشاملة تشمل:</h4>
+                            <ul class="space-y-2 text-sm opacity-90">
+                                <li>• دراسة الحالة وتحديد نوع الصندوق المناسب</li>
+                                <li>• إعداد جميع الوثائق والمستندات المطلوبة</li>
+                                <li>• متابعة إجراءات الترخيص مع المركز الوطني</li>
+                                <li>• تأسيس الهيكل الإداري ومجلس الأمناء</li>
+                                <li>• وضع السياسات المالية وأنظمة الحوكمة</li>
+                                <li>• التدريب والتأهيل للفريق الإداري</li>
+                            </ul>
+                        </div>
+                        
+                        <button onclick="showContactForm()" class="w-full bg-white text-blue-600 px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition duration-300 transform hover:scale-105">
+                            ابدأ رحلة التأسيس الشاملة
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Success Stories -->
+                <div class="mt-12 bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+                    <h3 class="text-2xl font-bold text-center mb-8">نماذج من النجاحات المحققة</h3>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="text-center">
+                            <div class="text-4xl mb-3">🏆</div>
+                            <div class="text-3xl font-bold mb-2">25+</div>
+                            <p class="opacity-80">صندوق عائلي تم تأسيسه بنجاح</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl mb-3">⚡</div>
+                            <div class="text-3xl font-bold mb-2">90%</div>
+                            <p class="opacity-80">معدل نجاح الحصول على التراخيص</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl mb-3">🤝</div>
+                            <div class="text-3xl font-bold mb-2">100%</div>
+                            <p class="opacity-80">رضا العملاء عن الخدمات المقدمة</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Modal -->
+    <div id="contactModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="p-8">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-2xl font-bold text-gray-800">ابدأ رحلة التأسيس</h3>
+                    <button onclick="hideContactForm()" class="text-gray-500 hover:text-gray-700 text-2xl">×</button>
+                </div>
+                <form onsubmit="handleContactSubmit(event)" class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">الاسم الكامل *</label>
+                            <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 transition duration-300" placeholder="اسمك الكامل">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">رقم الهوية الوطنية *</label>
+                            <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 transition duration-300" placeholder="رقم الهوية">
+                        </div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">رقم الجوال *</label>
+                            <input type="tel" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 transition duration-300" placeholder="05xxxxxxxx">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">البريد الإلكتروني *</label>
+                            <input type="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 transition duration-300" placeholder="example@email.com">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">نوع الصندوق المرغوب *</label>
+                        <select required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 transition duration-300">
+                            <option value="">اختر نوع الصندوق</option>
+                            <option value="personal">صندوق شخصي</option>
+                            <option value="named">صندوق باسم فرد منتسب إليه</option>
+                            <option value="general">صندوق عام</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">تفاصيل إضافية</label>
+                        <textarea rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 transition duration-300" placeholder="أي معلومات إضافية تود مشاركتها..."></textarea>
+                    </div>
+                    <div class="flex items-start space-x-reverse space-x-3">
+                        <input type="checkbox" required class="mt-1" id="terms">
+                        <label for="terms" class="text-sm text-gray-600">
+                            أوافق على <a href="#" class="text-blue-600 hover:underline">الشروط والأحكام</a> و <a href="#" class="text-blue-600 hover:underline">سياسة الخصوصية</a>
+                        </label>
+                    </div>
+                    <button type="submit" class="w-full cta-button text-white py-4 rounded-lg font-bold text-lg">
+                        إرسال الطلب
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-16">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <div class="text-3xl font-bold mb-4">
+                        <span class="text-blue-400">وَصْل</span>
+                    </div>
+                    <p class="text-gray-400 mb-6 leading-relaxed">
+                        منصة متكاملة لتأسيس وتطوير الصناديق العائلية وفقاً للقواعد التنظيمية الصادرة عن المركز الوطني لتنمية القطاع غير الربحي
+                    </p>
+                    <div class="text-sm text-gray-500">
+                        <p class="mb-2">📧 info@wasl-family-funds.com</p>
+                        <p class="mb-2">📞 +966 50 123 4567</p>
+                        <p>📍 الرياض، المملكة العربية السعودية</p>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-6 text-lg">روابط سريعة</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="#about" class="hover:text-white transition duration-300">عن الصناديق العائلية</a></li>
+                        <li><a href="#benefits" class="hover:text-white transition duration-300">المزايا</a></li>
+                        <li><a href="#requirements" class="hover:text-white transition duration-300">متطلبات التأسيس</a></li>
+                        <li><a href="#board" class="hover:text-white transition duration-300">مجلس الأمناء</a></li>
+                        <li><a href="#financial" class="hover:text-white transition duration-300">الشؤون المالية</a></li>
+                        <li><a href="#governance" class="hover:text-white transition duration-300">الحوكمة والقوانين</a></li>
+                        <li><a href="#services" class="hover:text-white transition duration-300">خدمات المنصة</a></li>
+                        <li><a href="#consultant" class="hover:text-white transition duration-300">المستشار</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-6 text-lg">خدماتنا</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li>استشارات التأسيس</li>
+                        <li>إعداد الوثائق</li>
+                        <li>متابعة الترخيص</li>
+                        <li>الحوكمة والتطوير</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 وَصْل - منصة الصناديق العائلية. جميع الحقوق محفوظة.</p>
+                <p class="mt-2 text-sm">تم التطوير وفقاً للقواعد التنظيمية للمركز الوطني لتنمية القطاع غير الربحي</p>
+            </div>
         </div>
     </footer>
-</body>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menuBtn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // Add smooth scrolling to all navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    document.getElementById('mobileMenu').classList.add('hidden');
+                }
+            });
+        });
+
+        // Contact form modal functions
+        function showContactForm() {
+            document.getElementById('contactModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function hideContactForm() {
+            document.getElementById('contactModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('contactModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                hideContactForm();
+            }
+        });
+
+        // Contact form submission
+        function handleContactSubmit(event) {
+            event.preventDefault();
+            
+            // Show success message
+            const form = event.target;
+            
+            // Create success message
+            const successDiv = document.createElement('div');
+            successDiv.className = 'bg-green-100 border border-green-400 text-green-700 px-6 py-4 rounded-lg mb-6 text-center';
+            successDiv.innerHTML = `
+                <div class="text-2xl mb-2">✅</div>
+                <h4 class="font-bold mb-2">تم إرسال طلبك بنجاح!</h4>
+                <p>سيتواصل معك المستشار عيسى بن محمد العيسى خلال 24 ساعة لبدء رحلة تأسيس صندوقك العائلي.</p>
+            `;
+            
+            // Replace form with success message
+            form.parentNode.replaceChild(successDiv, form);
+            
+            // Close modal after 3 seconds
+            setTimeout(() => {
+                hideContactForm();
+                // Restore form for next use
+                location.reload();
+            }, 3000);
+        }
+
+        // Add fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections and cards
+        document.querySelectorAll('section, .card-hover').forEach(element => {
+            observer.observe(element);
+        });
+
+        // Add active navigation highlighting
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('text-blue-600');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('text-blue-600');
+                }
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9783c8c2430cf9a3',t:'MTc1NjcxOTM5Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
